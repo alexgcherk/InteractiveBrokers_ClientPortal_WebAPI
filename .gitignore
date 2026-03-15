@@ -1,0 +1,10 @@
+# Build output
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+
+# Local secrets / private config (never commit these)
+appsettings.integration.local.json
