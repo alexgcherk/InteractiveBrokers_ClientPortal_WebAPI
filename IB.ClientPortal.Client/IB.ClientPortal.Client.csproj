@@ -4,10 +4,51 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
+    <!-- ── NuGet package identity ─────────────────────────────────────────── -->
+    <PackageId>IB.ClientPortal.Client</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Alex Cherkasov</Authors>
+    <Copyright>Copyright (c) 2026 Alex Cherkasov</Copyright>
+    <Description>
+      Typed .NET 8 client library for the Interactive Brokers Client Portal Web API (IB Gateway).
+      Covers authentication, accounts, orders, portfolio, real-time and historical market data,
+      contract search, alerts, performance analytics and watchlists.
+      All endpoints are strongly typed, async-first and fully cancellable.
+    </Description>
+    <PackageTags>interactivebrokers;ibkr;ib;trading;finance;gateway;client-portal;api;stocks;options</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/alexgcherk/InteractiveBrokers_ClientPortal_WebAPI</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/alexgcherk/InteractiveBrokers_ClientPortal_WebAPI</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>See CHANGELOG.md in the repository for the full history.</PackageReleaseNotes>
+
+    <!-- ── XML documentation (included in package for IDE IntelliSense) ──── -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- Suppress CS1591/CS1573: missing XML doc on intentionally undocumented members / CancellationToken params -->
+    <NoWarn>$(NoWarn);1591;1573</NoWarn>
+
+    <!-- ── Symbol package (.snupkg) for debugger step-through on NuGet.org ─ -->
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+    <!-- ── Reproducible / deterministic build ─────────────────────────────── -->
+    <Deterministic>true</Deterministic>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <!-- Enables full SourceLink path rewriting in CI (set by GitHub Actions env) -->
+    <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
   </PropertyGroup>
+
+  <!-- Include the repo README as the NuGet package readme -->
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <!-- SourceLink: maps .pdb source paths to GitHub so debuggers can fetch source -->
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>
