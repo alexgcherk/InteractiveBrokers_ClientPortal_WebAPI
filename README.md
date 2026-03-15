@@ -2,7 +2,7 @@
 
 [![NuGet](https://img.shields.io/nuget/v/IB.ClientPortal.Client.svg)](https://www.nuget.org/packages/IB.ClientPortal.Client)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/IB.ClientPortal.Client.svg)](https://www.nuget.org/packages/IB.ClientPortal.Client)
-[![CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/ci.yml)
+[![CI](https://github.com/alexgcherk/InteractiveBrokers_ClientPortal_WebAPI/actions/workflows/ci.yml/badge.svg)](https://github.com/alexgcherk/InteractiveBrokers_ClientPortal_WebAPI/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 A typed .NET 8 client library for the [Interactive Brokers Client Portal Web API](https://www.interactivebrokers.com/en/trading/ib-api.php) (also known as the **IB Gateway**). Wraps every endpoint in a strongly-typed, async-first interface so you can trade, query positions, stream market data and manage alerts without hand-rolling HTTP calls.
